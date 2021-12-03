@@ -8,7 +8,7 @@
 import SwiftUI
 
 /// Adapt UIKit views to be used in SwiftUI.
-struct UIViewAdapter<Content, Representable: UIViewRepresentable>: View where Representable.UIViewType == Content {
+public struct UIViewAdapter<Content, Representable: UIViewRepresentable>: View where Representable.UIViewType == Content {
     typealias Holder = UIViewHolder<Content>
     
     @State private var holder: Holder
@@ -20,7 +20,7 @@ struct UIViewAdapter<Content, Representable: UIViewRepresentable>: View where Re
     ///   - idealSizeCalculator: Calculation of the ideal size that fits the current size of the view.
     ///   - view: `UIView` factory.
     ///   - representable: Factory method that creates `UIViewRepresentable` appropriate for the view.
-    init(
+    public init(
         flexibility: UIViewFlexibility = .all,
         idealSizeCalculator: UIViewIdealSizeCalculator<Content> = .default,
         representable: @escaping () -> Representable
@@ -31,7 +31,7 @@ struct UIViewAdapter<Content, Representable: UIViewRepresentable>: View where Re
         self.representableFactory = representable
     }
     
-    var body: some View {
+    public var body: some View {
         RepresentableWrapper(wrap: representableFactory(), holder: $holder)
             .background(GeometryReader { proxy in
                 Color.clear
@@ -45,7 +45,7 @@ struct UIViewAdapter<Content, Representable: UIViewRepresentable>: View where Re
     }
 }
 
-extension UIViewAdapter where Representable == BasicUIViewRepresentable<Content> {
+public extension UIViewAdapter where Representable == BasicUIViewRepresentable<Content> {
     init(
         flexibility: UIViewFlexibility = .all,
         idealSizeCalculator: UIViewIdealSizeCalculator<Content> = .default,
@@ -135,49 +135,49 @@ extension UIViewHolder {
 // MARK: -
 
 /// A basic representable to be used in cases where the view does not need any customization or interactivity after instantiation.
-struct BasicUIViewRepresentable<Content: UIView>: UIViewRepresentable {
-    typealias UIViewType = Content
+public struct BasicUIViewRepresentable<Content: UIView>: UIViewRepresentable {
+    public typealias UIViewType = Content
     
-    let makeUIView: () -> Content
+    public let makeUIView: () -> Content
     
-    func makeUIView(context: Context) -> UIViewType {
+    public func makeUIView(context: Context) -> UIViewType {
         makeUIView()
     }
     
-    func updateUIView(_ uiView: UIViewType, context: Context) { }
+    public func updateUIView(_ uiView: UIViewType, context: Context) { }
 }
 
 /// UIViewRepresentable wrapper that passes its view to the outside view holder
-struct RepresentableWrapper<Wrapped: UIViewRepresentable>: UIViewRepresentable {
-    typealias UIViewType = Wrapped.UIViewType
+public struct RepresentableWrapper<Wrapped: UIViewRepresentable>: UIViewRepresentable {
+    public typealias UIViewType = Wrapped.UIViewType
     
-    typealias Coordinator = Wrapped.Coordinator
+    public typealias Coordinator = Wrapped.Coordinator
     
     let wrap: Wrapped
     
     @Binding var holder: UIViewHolder<UIViewType>
     
-    func makeCoordinator() -> Wrapped.Coordinator {
+    public func makeCoordinator() -> Wrapped.Coordinator {
         wrap.makeCoordinator()
     }
     
-    func makeUIView(context: Context) -> Wrapped.UIViewType {
+    public func makeUIView(context: Context) -> Wrapped.UIViewType {
         let uiView = wrap.makeUIView(context: unsafeBitCast(context, to: Wrapped.Context.self))
         holder.updateView(uiView)
         return uiView
     }
     
-    func updateUIView(_ uiView: Wrapped.UIViewType, context: Context) {
+    public func updateUIView(_ uiView: Wrapped.UIViewType, context: Context) {
         wrap.updateUIView(uiView, context: unsafeBitCast(context, to: Wrapped.Context.self))
     }
     
-    static func dismantleUIView(_ uiView: Wrapped.UIViewType, coordinator: Wrapped.Coordinator) {
+    public static func dismantleUIView(_ uiView: Wrapped.UIViewType, coordinator: Wrapped.Coordinator) {
         Wrapped.dismantleUIView(uiView, coordinator: coordinator)
     }
     
     // ⚠️: This is private SwiftUI API. Make sure to use it only for debug purposes and never in the actual release build of the app.
     #if DEBUG
-    func _overrideSizeThatFits(_ size: inout CGSize, in proposedSize: SwiftUI._ProposedSize, uiView: UIViewType) {
+    public func _overrideSizeThatFits(_ size: inout CGSize, in proposedSize: SwiftUI._ProposedSize, uiView: UIViewType) {
         holder.overrideSizeThatFits(&size, in: proposedSize, uiView: uiView)
     }
     #endif

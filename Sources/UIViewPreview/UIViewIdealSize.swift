@@ -8,7 +8,7 @@
 import UIKit
 
 /// Ideal size for the view. In Auto Layout terms, this is equivalent to the view intrinsic content size.
-struct IdealSize {
+public struct IdealSize {
     /// Ideal width. When nil, the width of view's intrinsic content size will be used.
     let width: CGFloat?
     
@@ -17,11 +17,11 @@ struct IdealSize {
 }
 
 /// Calculation of the ideal size that fits the current size of the view.
-struct UIViewIdealSizeCalculator<Content: UIView> {
+public struct UIViewIdealSizeCalculator<Content: UIView> {
     var viewIdealSizeInSize: (Content, CGSize) -> IdealSize
     
     /// Set the ideal size so that ideal width fits inside the proposed frame width. Ideal height is appropriate for the fitted width, but can exceed the proposed height.
-    static var `default`: Self {
+    public static var `default`: Self {
         .init { content, size in
             let fittingSize = content.systemLayoutSizeFitting(
                 size,
@@ -33,7 +33,7 @@ struct UIViewIdealSizeCalculator<Content: UIView> {
     }
     
     /// Do not override the ideal size. Use intrinsic content size of the view.
-    static var none: Self {
+    public static var none: Self {
         .init { _, _ in
             IdealSize(width: nil, height: nil)
         }

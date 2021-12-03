@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-struct SizeKey: PreferenceKey {
-    typealias Value = CGSize
+public struct SizeKey: PreferenceKey {
+    public typealias Value = CGSize
     
-    static var defaultValue: Value { .zero }
+    public static var defaultValue: Value { .zero }
     
-    static func reduce(value: inout Value, nextValue: () -> Value) {
+    public static func reduce(value: inout Value, nextValue: () -> Value) {
         value = nextValue()
     }
 }
