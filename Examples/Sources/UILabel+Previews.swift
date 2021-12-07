@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import UIViewPreview
+import PreviewKit
 
 // UILabel is notable as a system component that has a specified intrinsic
 // content size which reflects its text content. By default, width/height

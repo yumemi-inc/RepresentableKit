@@ -14,9 +14,9 @@
 		61EA31C6275A267D00AF136E /* UILabel+Previews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61EA31C2275A267C00AF136E /* UILabel+Previews.swift */; };
 		61EA31C7275A267D00AF136E /* CustomUIView+Previews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61EA31C3275A267C00AF136E /* CustomUIView+Previews.swift */; };
 		61EA31C8275A267D00AF136E /* UISlider+Previews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61EA31C4275A267D00AF136E /* UISlider+Previews.swift */; };
-		61EA31D2275A2A1400AF136E /* UIViewPreview in Frameworks */ = {isa = PBXBuildFile; productRef = 61EA31D1275A2A1400AF136E /* UIViewPreview */; };
 		61EA31D4275A2A5000AF136E /* Fiddler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61EA31D3275A2A5000AF136E /* Fiddler.swift */; };
 		61EA31D6275A31FF00AF136E /* SizeGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61EA31D5275A31FF00AF136E /* SizeGetter.swift */; };
+		A3BCA675275FCBF70007B9CB /* PreviewKit in Frameworks */ = {isa = PBXBuildFile; productRef = A3BCA674275FCBF70007B9CB /* PreviewKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,9 +28,9 @@
 		61EA31C2275A267C00AF136E /* UILabel+Previews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+Previews.swift"; sourceTree = "<group>"; };
 		61EA31C3275A267C00AF136E /* CustomUIView+Previews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CustomUIView+Previews.swift"; sourceTree = "<group>"; };
 		61EA31C4275A267D00AF136E /* UISlider+Previews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UISlider+Previews.swift"; sourceTree = "<group>"; };
-		61EA31CF275A2A0A00AF136E /* UIViewPreview */ = {isa = PBXFileReference; lastKnownFileType = folder; name = UIViewPreview; path = ..; sourceTree = "<group>"; };
 		61EA31D3275A2A5000AF136E /* Fiddler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fiddler.swift; sourceTree = "<group>"; };
 		61EA31D5275A31FF00AF136E /* SizeGetter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SizeGetter.swift; sourceTree = "<group>"; };
+		A3BCA673275FCBD90007B9CB /* PreviewKit */ = {isa = PBXFileReference; lastKnownFileType = folder; name = PreviewKit; path = ..; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,7 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				61EA31D2275A2A1400AF136E /* UIViewPreview in Frameworks */,
+				A3BCA675275FCBF70007B9CB /* PreviewKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,7 +82,7 @@
 		61EA31C9275A273A00AF136E /* Packages */ = {
 			isa = PBXGroup;
 			children = (
-				61EA31CF275A2A0A00AF136E /* UIViewPreview */,
+				A3BCA673275FCBD90007B9CB /* PreviewKit */,
 			);
 			name = Packages;
 			sourceTree = "<group>";
@@ -111,7 +111,7 @@
 			);
 			name = Examples;
 			packageProductDependencies = (
-				61EA31D1275A2A1400AF136E /* UIViewPreview */,
+				A3BCA674275FCBF70007B9CB /* PreviewKit */,
 			);
 			productName = Examples;
 			productReference = 61EA31A5275A247500AF136E /* Examples.app */;
@@ -378,9 +378,9 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		61EA31D1275A2A1400AF136E /* UIViewPreview */ = {
+		A3BCA674275FCBF70007B9CB /* PreviewKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = UIViewPreview;
+			productName = PreviewKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import UIViewPreview
+import PreviewKit
 
 // A simple custom UIView that is laid out with Auto Layout and does not customize
 // its intrinsic content size (which defaults to UIView.noIntrinsicMetric).

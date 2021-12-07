@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import UIViewPreview
+import PreviewKit
 
 struct SizeGetter: ViewModifier {
     @Binding var size: CGSize

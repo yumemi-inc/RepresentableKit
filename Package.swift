@@ -4,17 +4,17 @@
 import PackageDescription
 
 let package = Package(
-    name: "UIViewPreview",
+    name: "PreviewKit",
     platforms: [.iOS(.v13)],
     products: [
         .library(
-            name: "UIViewPreview",
-            targets: ["UIViewPreview"]
+            name: "PreviewKit",
+            targets: ["PreviewKit"]
         ),
     ],
     targets: [
         .target(
-            name: "UIViewPreview"
+            name: "PreviewKit"
         )
     ]
 )

@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import UIViewPreview
+import PreviewKit
 
 // UISlider is notable as a system component that has a specified
 // intrinsic content height, but not width
