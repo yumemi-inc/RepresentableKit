@@ -28,7 +28,7 @@
 		61EA31C2275A267C00AF136E /* UILabel+Previews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+Previews.swift"; sourceTree = "<group>"; };
 		61EA31C3275A267C00AF136E /* CustomUIView+Previews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CustomUIView+Previews.swift"; sourceTree = "<group>"; };
 		61EA31C4275A267D00AF136E /* UISlider+Previews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UISlider+Previews.swift"; sourceTree = "<group>"; };
-		61EA31CF275A2A0A00AF136E /* UIViewPreview */ = {isa = PBXFileReference; lastKnownFileType = folder; name = UIViewPreview; path = ../..; sourceTree = "<group>"; };
+		61EA31CF275A2A0A00AF136E /* UIViewPreview */ = {isa = PBXFileReference; lastKnownFileType = folder; name = UIViewPreview; path = ..; sourceTree = "<group>"; };
 		61EA31D3275A2A5000AF136E /* Fiddler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fiddler.swift; sourceTree = "<group>"; };
 		61EA31D5275A31FF00AF136E /* SizeGetter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SizeGetter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
