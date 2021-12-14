@@ -39,7 +39,7 @@ struct UILabel_Previews: PreviewProvider {
         .previewLayout(.sizeThatFits)
         
         Group {
-            UILabelFiddler(
+            UILabelSizeAdjustView(
                 text: "長さ十分で複数行以上にいけるテストになると思ったけど、長さが足りなくてつまらないことを入れた。"
             )
                 .previewDisplayName("Interactively fit view in specified width")
@@ -54,7 +54,7 @@ struct UILabel_Previews: PreviewProvider {
     }
 }
 
-struct UILabelFiddler: View {
+struct UILabelSizeAdjustView: View {
     let text: String
     
     @State var width: Double = 200
@@ -62,7 +62,7 @@ struct UILabelFiddler: View {
     @State var currentSize: CGSize = .zero
     
     var body: some View {
-        Fiddler {
+        SizeAdjustView {
             UIViewAdapter {
                 let view = UILabel()
                 view.numberOfLines = 0

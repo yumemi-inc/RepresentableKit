@@ -1,5 +1,5 @@
 //
-//  Fiddler.swift
+//  SizeAdjustView.swift
 //  
 //
 //  Created by Mikhail Apurin on 2021/10/27.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Fiddler<Canvas: View, Controls: View>: View {
+struct SizeAdjustView<Canvas: View, Controls: View>: View {
     let canvas: Canvas
     
     let controls: Controls

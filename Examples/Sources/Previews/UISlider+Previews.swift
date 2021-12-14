@@ -23,13 +23,13 @@ struct UISlider_Previews: PreviewProvider {
             .previewLayout(.sizeThatFits)
             .previewDisplayName("Size that fits: (W 150 H ideal)")
             
-            UISliderFiddler()
+            UISliderSizeAdjustView()
                 .previewDisplayName("Synchronized UISlider + SwiftUI Slider")
         }
     }
 }
 
-struct UISliderFiddler: View {
+struct UISliderSizeAdjustView: View {
     let min: CGFloat = -1
     
     let max: CGFloat = 1
@@ -37,7 +37,7 @@ struct UISliderFiddler: View {
     @State var value: CGFloat = 0
     
     var body: some View {
-        Fiddler {
+        SizeAdjustView {
             ForEach(0...10, id: \.self) { _ in
                 HStack(spacing: 16) {
                     UIViewAdapter {

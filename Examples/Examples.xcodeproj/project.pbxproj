@@ -8,13 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		61EA31A9275A247500AF136E /* ExamplesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61EA31A8275A247500AF136E /* ExamplesApp.swift */; };
-		61EA31AB275A247500AF136E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61EA31AA275A247500AF136E /* ContentView.swift */; };
 		61EA31AD275A247600AF136E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 61EA31AC275A247600AF136E /* Assets.xcassets */; };
 		61EA31C5275A267D00AF136E /* UIImageView+Previews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61EA31C1275A267C00AF136E /* UIImageView+Previews.swift */; };
 		61EA31C6275A267D00AF136E /* UILabel+Previews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61EA31C2275A267C00AF136E /* UILabel+Previews.swift */; };
 		61EA31C7275A267D00AF136E /* CustomUIView+Previews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61EA31C3275A267C00AF136E /* CustomUIView+Previews.swift */; };
 		61EA31C8275A267D00AF136E /* UISlider+Previews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61EA31C4275A267D00AF136E /* UISlider+Previews.swift */; };
-		61EA31D4275A2A5000AF136E /* Fiddler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61EA31D3275A2A5000AF136E /* Fiddler.swift */; };
+		61EA31D4275A2A5000AF136E /* SizeAdjustView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61EA31D3275A2A5000AF136E /* SizeAdjustView.swift */; };
 		61EA31D6275A31FF00AF136E /* SizeGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61EA31D5275A31FF00AF136E /* SizeGetter.swift */; };
 		A351EA8A27683F98003129AC /* RepresentableKit in Frameworks */ = {isa = PBXBuildFile; productRef = A351EA8927683F98003129AC /* RepresentableKit */; };
 /* End PBXBuildFile section */
@@ -22,13 +21,12 @@
 /* Begin PBXFileReference section */
 		61EA31A5275A247500AF136E /* Examples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Examples.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		61EA31A8275A247500AF136E /* ExamplesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamplesApp.swift; sourceTree = "<group>"; };
-		61EA31AA275A247500AF136E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		61EA31AC275A247600AF136E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		61EA31C1275A267C00AF136E /* UIImageView+Previews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Previews.swift"; sourceTree = "<group>"; };
 		61EA31C2275A267C00AF136E /* UILabel+Previews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+Previews.swift"; sourceTree = "<group>"; };
 		61EA31C3275A267C00AF136E /* CustomUIView+Previews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CustomUIView+Previews.swift"; sourceTree = "<group>"; };
 		61EA31C4275A267D00AF136E /* UISlider+Previews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UISlider+Previews.swift"; sourceTree = "<group>"; };
-		61EA31D3275A2A5000AF136E /* Fiddler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fiddler.swift; sourceTree = "<group>"; };
+		61EA31D3275A2A5000AF136E /* SizeAdjustView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SizeAdjustView.swift; sourceTree = "<group>"; };
 		61EA31D5275A31FF00AF136E /* SizeGetter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SizeGetter.swift; sourceTree = "<group>"; };
 		A351EA8827683F91003129AC /* RepresentableKit */ = {isa = PBXFileReference; lastKnownFileType = folder; name = RepresentableKit; path = ..; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -66,14 +64,9 @@
 		61EA31A7275A247500AF136E /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				61EA31D5275A31FF00AF136E /* SizeGetter.swift */,
-				61EA31D3275A2A5000AF136E /* Fiddler.swift */,
-				61EA31C3275A267C00AF136E /* CustomUIView+Previews.swift */,
-				61EA31C1275A267C00AF136E /* UIImageView+Previews.swift */,
-				61EA31C2275A267C00AF136E /* UILabel+Previews.swift */,
-				61EA31C4275A267D00AF136E /* UISlider+Previews.swift */,
+				A351EA8C27684308003129AC /* Utility */,
+				A351EA8B276842F5003129AC /* Previews */,
 				61EA31A8275A247500AF136E /* ExamplesApp.swift */,
-				61EA31AA275A247500AF136E /* ContentView.swift */,
 				61EA31AC275A247600AF136E /* Assets.xcassets */,
 			);
 			path = Sources;
@@ -92,6 +85,26 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A351EA8B276842F5003129AC /* Previews */ = {
+			isa = PBXGroup;
+			children = (
+				61EA31C3275A267C00AF136E /* CustomUIView+Previews.swift */,
+				61EA31C1275A267C00AF136E /* UIImageView+Previews.swift */,
+				61EA31C2275A267C00AF136E /* UILabel+Previews.swift */,
+				61EA31C4275A267D00AF136E /* UISlider+Previews.swift */,
+			);
+			path = Previews;
+			sourceTree = "<group>";
+		};
+		A351EA8C27684308003129AC /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				61EA31D5275A31FF00AF136E /* SizeGetter.swift */,
+				61EA31D3275A2A5000AF136E /* SizeAdjustView.swift */,
+			);
+			path = Utility;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -168,11 +181,10 @@
 			files = (
 				61EA31C5275A267D00AF136E /* UIImageView+Previews.swift in Sources */,
 				61EA31D6275A31FF00AF136E /* SizeGetter.swift in Sources */,
-				61EA31AB275A247500AF136E /* ContentView.swift in Sources */,
 				61EA31C7275A267D00AF136E /* CustomUIView+Previews.swift in Sources */,
 				61EA31A9275A247500AF136E /* ExamplesApp.swift in Sources */,
 				61EA31C6275A267D00AF136E /* UILabel+Previews.swift in Sources */,
-				61EA31D4275A2A5000AF136E /* Fiddler.swift in Sources */,
+				61EA31D4275A2A5000AF136E /* SizeAdjustView.swift in Sources */,
 				61EA31C8275A267D00AF136E /* UISlider+Previews.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

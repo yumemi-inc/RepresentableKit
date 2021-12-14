@@ -11,6 +11,14 @@ import SwiftUI
 public struct UIViewAdapter<Content, Representable: UIViewRepresentable>: View where Representable.UIViewType == Content {
     typealias Holder = UIViewHolder<Content>
     
+    struct SizeKey: PreferenceKey {
+        public static var defaultValue: CGSize { .zero }
+        
+        public static func reduce(value: inout CGSize, nextValue: () -> CGSize) {
+            value = nextValue()
+        }
+    }
+    
     @State private var holder: Holder
     
     let representableFactory: () -> Representable
@@ -117,19 +125,6 @@ struct UIViewHolder<Content: UIView> {
         }
     }
     #endif
-}
-
-extension UIViewHolder {
-    /// - Parameters:
-    ///   - flexibility: View dimensions that can be compressed/stretched.
-    ///   - idealSizeCalculator: Calculation of the ideal size that fits the current size of the view.
-    init(
-        flexibility: UIViewFlexibility,
-        idealSizeCalculator: UIViewIdealSizeCalculator<Content>
-    ) {
-        self.flexibility = flexibility
-        self.idealSizeCalculator = idealSizeCalculator
-    }
 }
 
 // MARK: -

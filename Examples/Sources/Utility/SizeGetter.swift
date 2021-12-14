@@ -9,6 +9,14 @@ import SwiftUI
 import RepresentableKit
 
 struct SizeGetter: ViewModifier {
+    struct SizeKey: PreferenceKey {
+        static var defaultValue: CGSize { .zero }
+        
+        static func reduce(value: inout CGSize, nextValue: () -> CGSize) {
+            value = nextValue()
+        }
+    }
+    
     @Binding var size: CGSize
     
     func body(content: Content) -> some View {

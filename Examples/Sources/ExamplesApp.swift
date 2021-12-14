@@ -11,7 +11,7 @@ import SwiftUI
 struct ExamplesApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            Text("For sample code see previews inside the Previews folder.")
         }
     }
 }
