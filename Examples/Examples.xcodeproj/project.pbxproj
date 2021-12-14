@@ -16,7 +16,7 @@
 		61EA31C8275A267D00AF136E /* UISlider+Previews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61EA31C4275A267D00AF136E /* UISlider+Previews.swift */; };
 		61EA31D4275A2A5000AF136E /* Fiddler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61EA31D3275A2A5000AF136E /* Fiddler.swift */; };
 		61EA31D6275A31FF00AF136E /* SizeGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61EA31D5275A31FF00AF136E /* SizeGetter.swift */; };
-		A3BCA675275FCBF70007B9CB /* PreviewKit in Frameworks */ = {isa = PBXBuildFile; productRef = A3BCA674275FCBF70007B9CB /* PreviewKit */; };
+		A351EA8A27683F98003129AC /* RepresentableKit in Frameworks */ = {isa = PBXBuildFile; productRef = A351EA8927683F98003129AC /* RepresentableKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,7 +30,7 @@
 		61EA31C4275A267D00AF136E /* UISlider+Previews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UISlider+Previews.swift"; sourceTree = "<group>"; };
 		61EA31D3275A2A5000AF136E /* Fiddler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fiddler.swift; sourceTree = "<group>"; };
 		61EA31D5275A31FF00AF136E /* SizeGetter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SizeGetter.swift; sourceTree = "<group>"; };
-		A3BCA673275FCBD90007B9CB /* PreviewKit */ = {isa = PBXFileReference; lastKnownFileType = folder; name = PreviewKit; path = ..; sourceTree = "<group>"; };
+		A351EA8827683F91003129AC /* RepresentableKit */ = {isa = PBXFileReference; lastKnownFileType = folder; name = RepresentableKit; path = ..; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,7 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A3BCA675275FCBF70007B9CB /* PreviewKit in Frameworks */,
+				A351EA8A27683F98003129AC /* RepresentableKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,7 +82,7 @@
 		61EA31C9275A273A00AF136E /* Packages */ = {
 			isa = PBXGroup;
 			children = (
-				A3BCA673275FCBD90007B9CB /* PreviewKit */,
+				A351EA8827683F91003129AC /* RepresentableKit */,
 			);
 			name = Packages;
 			sourceTree = "<group>";
@@ -111,7 +111,7 @@
 			);
 			name = Examples;
 			packageProductDependencies = (
-				A3BCA674275FCBF70007B9CB /* PreviewKit */,
+				A351EA8927683F98003129AC /* RepresentableKit */,
 			);
 			productName = Examples;
 			productReference = 61EA31A5275A247500AF136E /* Examples.app */;
@@ -378,9 +378,9 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		A3BCA674275FCBF70007B9CB /* PreviewKit */ = {
+		A351EA8927683F98003129AC /* RepresentableKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = PreviewKit;
+			productName = RepresentableKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

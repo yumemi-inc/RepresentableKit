@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import PreviewKit
+import RepresentableKit
 
 // UIImageView is notable as a system component that has a specified
 // intrinsic content size that is equal to its UIImage dimensions.

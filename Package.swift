@@ -4,17 +4,17 @@
 import PackageDescription
 
 let package = Package(
-    name: "PreviewKit",
+    name: "RepresentableKit",
     platforms: [.iOS(.v13)],
     products: [
         .library(
-            name: "PreviewKit",
-            targets: ["PreviewKit"]
+            name: "RepresentableKit",
+            targets: ["RepresentableKit"]
         ),
     ],
     targets: [
         .target(
-            name: "PreviewKit"
+            name: "RepresentableKit"
         )
     ]
 )
