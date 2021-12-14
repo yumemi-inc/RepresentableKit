@@ -5,9 +5,11 @@
 //  Created by Mikhail Apurin on 2021/10/27.
 //
 
+#if os(iOS)
 import UIKit
 
 /// Ideal size for the view. In Auto Layout terms, this is equivalent to the view intrinsic content size.
+@available(iOS 13, *)
 public struct IdealSize: Hashable {
     /// Ideal width. When nil, the width of view's intrinsic content size will be used.
     public let width: CGFloat?
@@ -22,6 +24,7 @@ public struct IdealSize: Hashable {
 }
 
 /// Calculation of the ideal size that fits the current size of the view.
+@available(iOS 13, *)
 public struct UIViewIdealSizeCalculator<Content: UIView> {
     /// Calculate the view ideal size fot a given size.
     public var viewIdealSizeInSize: (Content, CGSize) -> IdealSize
@@ -31,6 +34,7 @@ public struct UIViewIdealSizeCalculator<Content: UIView> {
     }
 }
 
+@available(iOS 13, *)
 public extension UIViewIdealSizeCalculator {
     /// Set the ideal size so that ideal width fits inside the proposed frame width. Ideal height is appropriate for the fitted width, but can exceed the proposed height.
     static var `default`: Self {
@@ -51,3 +55,4 @@ public extension UIViewIdealSizeCalculator {
         }
     }
 }
+#endif

@@ -5,9 +5,11 @@
 //  Created by Mikhail Apurin on 2021/10/27.
 //
 
+#if os(iOS)
 import UIKit
 
 /// Flexibility of a view is its ability to take a size that is less or more than its ideal size in a dimension.
+@available(iOS 13, *)
 public struct UIViewFlexibility: OptionSet {
     public let rawValue: Int8
     
@@ -46,7 +48,8 @@ public struct UIViewFlexibility: OptionSet {
     }
 }
 
-extension UIView {
+@available(iOS 13, *)
+public extension UIView {
     /// Set compression resistance and content hugging priorities so that SwiftUI can pick up the flexibility of this view.
     func apply(flexibility: UIViewFlexibility) {
         setContentCompressionResistancePriority(flexibility.priority(.minHorizontal), for: .horizontal)
@@ -55,3 +58,4 @@ extension UIView {
         setContentHuggingPriority(flexibility.priority(.maxVertical), for: .vertical)
     }
 }
+#endif

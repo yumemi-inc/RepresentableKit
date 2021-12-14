@@ -5,9 +5,11 @@
 //  Created by Mikhail Apurin on 2021/10/26.
 //
 
+#if os(iOS)
 import SwiftUI
 
 /// Adapt UIKit views to be used in SwiftUI.
+@available(iOS 13, *)
 public struct UIViewAdaptor<Content, Representable: UIViewRepresentable>: View where Representable.UIViewType == Content {
     typealias Holder = UIViewHolder<Content>
     
@@ -53,6 +55,7 @@ public struct UIViewAdaptor<Content, Representable: UIViewRepresentable>: View w
     }
 }
 
+@available(iOS 13, *)
 public extension UIViewAdaptor where Representable == BasicUIViewRepresentable<Content> {
     init(
         flexibility: UIViewFlexibility = .all,
@@ -70,6 +73,7 @@ public extension UIViewAdaptor where Representable == BasicUIViewRepresentable<C
 // MARK: -
 
 /// Class responsible for setting the view flexibility and updating the ideal size.
+@available(iOS 13, *)
 struct UIViewHolder<Content: UIView> {
     /// Storage for the view. To avoid holding on to the instance after SwiftUI has already discarded the view, this storage is weak.
     final class ViewStorage {
@@ -130,6 +134,7 @@ struct UIViewHolder<Content: UIView> {
 // MARK: -
 
 /// A basic representable to be used in cases where the view does not need any customization or interactivity after instantiation.
+@available(iOS 13, *)
 public struct BasicUIViewRepresentable<Content: UIView>: UIViewRepresentable {
     public typealias UIViewType = Content
     
@@ -143,6 +148,7 @@ public struct BasicUIViewRepresentable<Content: UIView>: UIViewRepresentable {
 }
 
 /// UIViewRepresentable wrapper that passes its view to the outside view holder
+@available(iOS 13, *)
 public struct RepresentableWrapper<Wrapped: UIViewRepresentable>: UIViewRepresentable {
     public typealias UIViewType = Wrapped.UIViewType
     
@@ -177,3 +183,4 @@ public struct RepresentableWrapper<Wrapped: UIViewRepresentable>: UIViewRepresen
     }
     #endif
 }
+#endif
