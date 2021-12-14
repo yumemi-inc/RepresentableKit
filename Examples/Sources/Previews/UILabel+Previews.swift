@@ -13,22 +13,24 @@ import RepresentableKit
 // is calculated without any bounds, but you can set `preferredMaxLayoutWidth`
 // to non-zero value as the upper bound for width.
 
+let lipsum = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec dignissim congue justo ac dignissim. Integer eget semper mi. In non vestibulum risus."
+
 struct UILabel_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             UIViewAdapter {
-                makeMultilineLabel(text: "テキスト")
+                makeMultilineLabel(text: "Some text")
             }
             .previewDisplayName("Size that fits: (W ideal H ideal)")
             
             UIViewAdapter {
-                makeMultilineLabel(text: "長さ十分で複数行以上にいけるテストになると思ったけど、長さが足りなくてつまらないことを入れた。")
+                makeMultilineLabel(text: lipsum)
             }
             .frame(width: 390)
             .previewDisplayName("Size that fits: (W 390 H ideal)")
 
             UIViewAdapter {
-                makeMultilineLabel(text: "長さ十分で複数行以上にいけるテストになると思ったけど、長さが足りなくてつまらないことを入れた。")
+                makeMultilineLabel(text: lipsum)
             }
             .frame(idealWidth: 390, idealHeight: 44)
             .previewDisplayName("Size that fits: (W 390 H 44)")
@@ -39,9 +41,7 @@ struct UILabel_Previews: PreviewProvider {
         .previewLayout(.sizeThatFits)
         
         Group {
-            UILabelSizeAdjustView(
-                text: "長さ十分で複数行以上にいけるテストになると思ったけど、長さが足りなくてつまらないことを入れた。"
-            )
+            UILabelSizeAdjustView(text: lipsum)
                 .previewDisplayName("Interactively fit view in specified width")
         }
     }
