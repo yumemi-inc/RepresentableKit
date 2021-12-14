@@ -1,5 +1,5 @@
 //
-//  UIViewAdapter.swift
+//  UIViewAdaptor.swift
 //  
 //
 //  Created by Mikhail Apurin on 2021/10/26.
@@ -8,7 +8,7 @@
 import SwiftUI
 
 /// Adapt UIKit views to be used in SwiftUI.
-public struct UIViewAdapter<Content, Representable: UIViewRepresentable>: View where Representable.UIViewType == Content {
+public struct UIViewAdaptor<Content, Representable: UIViewRepresentable>: View where Representable.UIViewType == Content {
     typealias Holder = UIViewHolder<Content>
     
     struct SizeKey: PreferenceKey {
@@ -53,7 +53,7 @@ public struct UIViewAdapter<Content, Representable: UIViewRepresentable>: View w
     }
 }
 
-public extension UIViewAdapter where Representable == BasicUIViewRepresentable<Content> {
+public extension UIViewAdaptor where Representable == BasicUIViewRepresentable<Content> {
     init(
         flexibility: UIViewFlexibility = .all,
         idealSizeCalculator: UIViewIdealSizeCalculator<Content> = .default,

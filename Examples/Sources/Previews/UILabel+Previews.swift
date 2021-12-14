@@ -18,18 +18,18 @@ let lipsum = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec dig
 struct UILabel_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            UIViewAdapter {
+            UIViewAdaptor {
                 makeMultilineLabel(text: "Some text")
             }
             .previewDisplayName("Size that fits: (W ideal H ideal)")
             
-            UIViewAdapter {
+            UIViewAdaptor {
                 makeMultilineLabel(text: lipsum)
             }
             .frame(width: 390)
             .previewDisplayName("Size that fits: (W 390 H ideal)")
 
-            UIViewAdapter {
+            UIViewAdaptor {
                 makeMultilineLabel(text: lipsum)
             }
             .frame(idealWidth: 390, idealHeight: 44)
@@ -63,7 +63,7 @@ struct UILabelSizeAdjustView: View {
     
     var body: some View {
         SizeAdjustView {
-            UIViewAdapter {
+            UIViewAdaptor {
                 let view = UILabel()
                 view.numberOfLines = 0
                 view.text = text

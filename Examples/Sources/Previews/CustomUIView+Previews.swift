@@ -14,7 +14,7 @@ import RepresentableKit
 struct CustomUIView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            UIViewAdapter {
+            UIViewAdaptor {
                 CustomUIView()
             }
             .frame(width: 160)
@@ -28,24 +28,24 @@ struct CustomUIView_Previews: PreviewProvider {
                 ForEach(0...10, id: \.self) { _ in
                     VStack {
                         HStack {
-                            UIViewAdapter {
+                            UIViewAdaptor {
                                 CustomUIView()
                             }
                             .border(.orange, width: 1)
                             
-                            UIViewAdapter {
+                            UIViewAdaptor {
                                 CustomUIView()
                             }
                             .border(.orange, width: 1)
                         }
                         
                         VStack {
-                            UIViewAdapter {
+                            UIViewAdaptor {
                                 CustomUIView()
                             }
                             .border(.orange, width: 1)
                             
-                            UIViewAdapter {
+                            UIViewAdaptor {
                                 CustomUIView()
                             }
                             .border(.orange, width: 1)

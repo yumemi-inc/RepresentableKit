@@ -14,7 +14,7 @@ import RepresentableKit
 struct UIImageView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            UIViewAdapter {
+            UIViewAdaptor {
                 makeView()
             }
             .aspectRatio(contentMode: .fit)
@@ -26,12 +26,12 @@ struct UIImageView_Previews: PreviewProvider {
             ScrollView {
                 ForEach(0...10, id: \.self) { _ in
                     HStack {
-                        UIViewAdapter {
+                        UIViewAdaptor {
                             makeView()
                         }
                         .aspectRatio(nil, contentMode: .fit)
                         
-                        UIViewAdapter {
+                        UIViewAdaptor {
                             makeView()
                         }
                         .aspectRatio(nil, contentMode: .fit)

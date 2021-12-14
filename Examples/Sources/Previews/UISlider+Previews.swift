@@ -14,7 +14,7 @@ import RepresentableKit
 struct UISlider_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            UIViewAdapter {
+            UIViewAdaptor {
                 UISlider()
             }
             .fixedSize(horizontal: false, vertical: true)
@@ -40,12 +40,12 @@ struct UISliderSizeAdjustView: View {
         SizeAdjustView {
             ForEach(0...10, id: \.self) { _ in
                 HStack(spacing: 16) {
-                    UIViewAdapter {
+                    UIViewAdaptor {
                         // Using a custom UIViewRepresentable that is defined below
                         UISliderView(min: min, max: max, value: $value)
                     }
                     
-                    UIViewAdapter {
+                    UIViewAdaptor {
                         // Using a custom UIViewRepresentable that is defined below
                         UISliderView(min: min, max: max, value: $value)
                     }
