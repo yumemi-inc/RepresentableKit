@@ -41,7 +41,7 @@ Use Swift Package Manager to install RepresentableKit.
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/yumemi/RepresentableKit.git", .upToNextMajor(from: "0.0.1"))
+    .package(url: "https://github.com/yumemi-inc/RepresentableKit.git", .upToNextMajor(from: "0.1.0"))
 ]
 ```
 
