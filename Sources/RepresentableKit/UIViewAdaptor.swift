@@ -23,6 +23,8 @@ public struct UIViewAdaptor<Content, Representable: UIViewRepresentable>: View w
     
     @State private var holder: Holder
     
+    @State private var idealSize: IdealSize?
+    
     let representableFactory: () -> Representable
     
     /// - Parameters:
@@ -42,15 +44,15 @@ public struct UIViewAdaptor<Content, Representable: UIViewRepresentable>: View w
     }
     
     public var body: some View {
-        RepresentableWrapper(wrap: representableFactory(), holder: $holder)
+        RepresentableWrapper(wrap: representableFactory(), holder: holder)
             .background(GeometryReader { proxy in
                 Color.clear
                     .preference(key: SizeKey.self, value: proxy.size)
-                    .onPreferenceChange(SizeKey.self) { holder.updateSize(proxySize: $0) }
+                    .onPreferenceChange(SizeKey.self) { idealSize = holder.idealSize(proxySize: $0) }
             })
             .frame(
-                idealWidth: holder.idealSize.width,
-                idealHeight: holder.idealSize.height
+                idealWidth: idealSize?.width,
+                idealHeight: idealSize?.height
             )
     }
 }
@@ -86,17 +88,14 @@ struct UIViewHolder<Content: UIView> {
     
     let idealSizeCalculator: UIViewIdealSizeCalculator<Content>
     
-    var idealSize = IdealSize(width: nil, height: nil)
-        
-    mutating func updateView(_ uiView: Content) {
+    func updateView(_ uiView: Content) {
         storage.view = uiView
         uiView.apply(flexibility: flexibility)
-        updateSize(proxySize: uiView.frame.size)
     }
     
-    mutating func updateSize(proxySize: CGSize) {
-        guard let uiView = storage.view else { return }
-        idealSize = idealSizeCalculator.viewIdealSizeInSize(uiView, proxySize)
+    func idealSize(proxySize: CGSize) -> IdealSize? {
+        guard let uiView = storage.view else { return nil }
+        return idealSizeCalculator.viewIdealSizeInSize(uiView, proxySize)
     }
     
     #if DEBUG
@@ -156,7 +155,7 @@ public struct RepresentableWrapper<Wrapped: UIViewRepresentable>: UIViewRepresen
     
     let wrap: Wrapped
     
-    @Binding var holder: UIViewHolder<UIViewType>
+    let holder: UIViewHolder<UIViewType>
     
     public func makeCoordinator() -> Wrapped.Coordinator {
         wrap.makeCoordinator()
